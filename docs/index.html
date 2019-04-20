@@ -1,2 +1,32 @@
-Hello World
-<a href="1-100.html">1-</a>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>丑丑鱼的潘多拉</title>
+</head>
+<body>
+ 
+    <div id="container">
+    </div>
+    <script>
+        window.onload = function () {
+            var fso, f, fc, s,str;
+            fso = new ActiveXObject("Scripting.FileSystemObject");
+            f = fso.GetFolder("./list/page");
+            fc = new Enumerator(f.SubFolders);
+            s = "";
+            for (;!fc.atEnd(); fc.moveNext())
+                {
+                    s += fc.item();
+                    s += "<br>";
+                }
+                
+                str += '<a>'+r+'</a>'; //拼接str
+            
+
+            document.getElementById('container').innerHTML=str;
+        }
+    </script>
+ 
+</body>
+</html>
