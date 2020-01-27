@@ -11,6 +11,97 @@
    1.  早上全读书
    2.  助记里的练习Excel默写
    3.  晚上看视频（不择手段背单词）
+Configure pgperffarm environment
+  Install git: sudo apt install git
+  Update apt: sudo apt update
+  Install Python3: sudo apt install python3. Also you can check your python3 version by: python3 --version.
+  Install pip3:  sudo apt install pip3
+  Install virtualEnvWrapper: sudo pip3 install virtualenvwrapper
+  Install postgresql 11:
+  # add the repository
+  sudo tee /etc/apt/sources.list.d/pgdg.list <<END
+  deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main
+  END
+
+  # get the signing key and import it
+  wget https://www.postgresql.org/media/keys/ACCC4CF8.asc
+  sudo apt-key add ACCC4CF8.asc
+   
+  # fetch the metadata from the new repo
+  sudo apt-get update
+
+  sudo apt-get install postgresql-11 (directly run this command without previous steps may not work)
+  Sudo gedit /etc/postgresql/11/main/pg_hba.conf. Change This line:
+  local all postgres peer
+
+  Should be:
+
+  local all postgres trust (peer may need password to do the next step, trust does not need password to do next step)
+
+  Change postgres password and use it for django
+  Restart postgresql service
+  ●      sudo service postgresql restart
+  ●      psql -U postgres
+  ●      At the postgres=# prompt, change the user name postgres password using the following command:
+  ●      ALTER USER postgres with password ‘password’;
+  ●      Revert the changes in pg_hba.conf file from trust to md5 and restart postgresql. (it’s possible to remain using trust without a password, but needs verification)  Note this username and password is used to super user the postgres service, which is different from the django superuser in the next steps.
+
+
+
+   
+  (NOTE: postgres is the super user name of postgresql)
+  Restart postgresql: sudo service postgresql restart
+  Install pgadmin4(may be use)
+  Pgadmin iii can be installed via ubuntu software center
+   
+   
+  Create folder for python class: mkdir PythonClass
+  Enter python class folder: cd PythonClass
+  Clone pgperffarm project from git: git clone https://github.com/JonStark3123/django-postgres-stack. You will see pgperffarm folder in side of PythonClass folder.
+  VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+  Load virtualenvwrapper: source /usr/local/bin/virtualenvwrapper.sh (12 and 13 needs to be done together)
+  mkvirtualenv pgperffarm
+  Come into rest_api folder:
+  cd pgperffarm
+  cd rest_api
+  sudo apt-get install libpq-dev
+  Install rest_api requirements: pip3 install -r requirements.txt
+  You need to remove the previous migrations and create new migration files, there is a tutorial in https://micropyramid.com/blog/how-to-create-initial-django-migrations-for-existing-schema/
+  In the postgres prompt use: delete from django_migrations;
+  Then rm -rf <app>/migrations/
+  python manage.py migrate --fake
+
+  python manage.py makemigrations <app>
+
+  python manage.py migrate --fake-initia
+
+  python3 manage.py makemigrations
+  python3 manage.py migrate (these two steps may not be need if you’ve done the previous step)
+  python3 manage.py createsuperuser (this only needs to be done once at the beginning, this is the django super user, which is different from the previous postgres username and password.) recommended username: gsoccamp, password: gsoccamp This username and password are used to login 127.0.0.1:8000/admin
+  python3 manage.py runserver
+  Client
+  1.     Open a new terminal
+  2.     VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+  3.     Load virtualenvwrapper: source /usr/local/bin/virtualenvwrapper.sh
+  4.     mkvirtualenv pgperffarm
+  5.     Come into rest_api folder:
+  a.     cd pgperffarm
+  b.     Cd client
+  6.     pip3 install -r requirements.txt
+  7.     Install collectd: apt-get install collectd
+  8.     Open client settings.py
+  a.     Change build path to follow
+
+  b.     Change database_name to follow
+
+  9.     Copy settings_local.py from rest_api folder to client folder;
+  10.  python3 perffarm-client.py
+   
+  Enable the viewing in PG Admin -- create a new server, put in the port as 5431, the username and password being the postgres super user: postgres, password. (It’s possible to have another user and corresponding user group, but will need extra work)
+  In rest_api, setting_local.py, there is the database name, user, password of the django admin database. Then in schema -> table -> auth_user, you should be able to see the previously created django super users.
+  Go to the client folder and run pip3 install -r requirements.txt, this installs the requirement dependencies to execute client code.
+   
+
      <a href="倒计时作文练习增强版(可选I&A).htm">倒计时作文练习增强版(可选I&A)</a></br>
     
      <a href="https://docs.google.com/spreadsheets/d/1UXz__xRCFtaWfAXuGZvjg4jiBBOkMPIWZ-5rfmd9IYU/pub?hl=en_US&hl=en_US&hl=en_US&single=true&gid=3&output=html">GRE机经回报：高频统计</a></br>
