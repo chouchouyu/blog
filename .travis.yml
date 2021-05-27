@@ -10,7 +10,9 @@ deploy:
   skip_cleanup: true
   local_dir: docs/.vuepress/dist
  
-  github_token: $GITHUB_TOKEN
+  # github_token: $GITHUB_TOKEN
+   env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   keep_history: true
   on:
     branch: master
