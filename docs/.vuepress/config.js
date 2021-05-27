@@ -1,6 +1,6 @@
 module.exports = {
-  title: '文档CMS',
-  description: '文档管理中心',
+  title: '文档CMS网站',
+  description: '网站文档管理中心',
   dest: './dist',
   port: '7777',
   head: [

@@ -1,6 +1,6 @@
 module.exports = [
     {
-        text: '小新指南', link: '/guide/'
+        text: '日记', link: '/diary/'
     },
     {
         text: '开发技巧', link: '/dev/',
