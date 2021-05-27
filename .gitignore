@@ -1,3 +1,4 @@
+
 # node modules
 node_modules
 
@@ -8,7 +9,7 @@ node_modules
 *.log
 
 # Meta files
-TODOs.md
+# TODOs.md
 
 # Editors
 .vscode
@@ -23,11 +24,3 @@ TODOs.md
 # Typescript build dist
 packages/@vuepress/shared-utils/lib/
 packages/@vuepress/shared-utils/types/
-
-
-node_modules
-.history
-.vscode
-.vuepress/dist/
-.vuepress/configs/secretKey.js
-.vercel

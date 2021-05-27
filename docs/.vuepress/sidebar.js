@@ -1,5 +1,6 @@
 module.exports = {
-    '/guide/': require('../guide/sidebar'),
-    '/dev/zero': require('../dev/zero/sidebar'),
-    '/dev/high': require('../dev/high/sidebar'),
-}
+	'/guide/': require('../guide/sidebar'),
+	'/baodian/interview': require('../baodian/interview/sidebar'),
+	'/baodian/talk': require('../baodian/talk/sidebar'),
+}	
+

@@ -1,16 +1,16 @@
 module.exports = [
     {
-        text: '日记', link: '/diary/'
+        text: '随笔', link: '/guide/'
     },
     {
-        text: '开发技巧', link: '/dev/',
+        text: '知识', //link: '/knowledge/',
         items: [
-            {text: '初级篇', link: '/dev/zero/'},
-            {text: '进阶篇', link: '/dev/high/'},
+            {text: '初级篇', link: '/baodian/interview/'},
+            {text: '进阶篇', link: '/baodian/notes/'},
         ]
     },
     {
-        text: '工具箱',
+        text: '收藏',
         items: [
             {
                 text: '在线编辑',

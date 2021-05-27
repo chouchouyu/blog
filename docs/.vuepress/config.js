@@ -1,10 +1,9 @@
 module.exports = {
-  title: '文档CMS网站',
-  description: '网站文档管理中心',
-  dest: './dist',
+  title: '丑丑鱼的个人博客',
+  description: 'susan blog',
   port: '7777',
   head: [
-    ['link', {rel: 'icon', href: '/img/logo.png'}],
+    ['link', {rel: 'icon', href: '/img/logo.png'}],//地址栏图标
     ['link', {rel: 'stylesheet', href: '/css/style.css'}],
     ['script', {chartset: 'utf-8', src: '/js/main.js'}]
 ],
@@ -14,7 +13,8 @@ module.exports = {
   themeConfig: {
       nav: require("./nav.js"),
       sidebar: require("./sidebar.js"),
-      sidebarDepth: 2,
+      collapsable:true,
+      sidebarDepth: 3,
       lastUpdated: 'Last Updated',
       searchMaxSuggestoins: 10,
       serviceWorker: {
