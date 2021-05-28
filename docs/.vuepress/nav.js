@@ -1,6 +1,6 @@
 module.exports = [
     {
-        text: '随笔', link: '/guide/'
+        text: '日记本', link: '/diary/'
     },
     {
         text: '知识', //link: '/knowledge/',

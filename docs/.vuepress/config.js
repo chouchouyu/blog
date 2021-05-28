@@ -1,6 +1,6 @@
 module.exports = {
-  title: '丑丑鱼的个人博客',
-  description: 'susan blog',
+  title: '丑丑鱼的潘多拉',
+  description: '每一天并不是简单的重复,将在此处留下记录',
   port: '7777',
   base: "/blog/",
   head: [
