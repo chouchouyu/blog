@@ -14,6 +14,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
-  "keywords": []
-  
+  "keywords": [],
+   "scripts": {
+        "deploy": "bash deploy.sh"
+  }
 }
