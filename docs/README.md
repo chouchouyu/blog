@@ -1,7 +1,7 @@
 ---
 home: true
 heroImage: /img/logo.png
-heroText: 我的主页
+heroText: 接受它|改变它|离开它
 actionText: 快速上手 →
 actionLink: /diary/
 features:
