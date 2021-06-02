@@ -20,7 +20,7 @@ node_modules
 
 # Docs dist directory
 /.vuepress/dist
-
+/node_modules
 # Typescript build dist
 packages/@vuepress/shared-utils/lib/
 packages/@vuepress/shared-utils/types/
