@@ -1,14 +1,14 @@
 module.exports = [
     {
-        text: '日记本', link: '/diary/notes/学英语的顿悟'
+        text: '日记本', link: '/diary/'
     },
-    // {
-    //     text: '知识', //link: '/knowledge/',
-    //     items: [
-    //         {text: '初级篇', link: '/baodian/interview/'},
-    //         {text: '进阶篇', link: '/baodian/notes/'},
-    //     ]
-    // },
+    {
+        text: '知识体系', link: '/knowledge/',
+        // items: [
+        //     {text: '初级篇', link: '/baodian/interview/'},
+        //     {text: '进阶篇', link: '/baodian/notes/'},
+        // ]
+    },
     // {
     //     text: '收藏',
     //     items: [
