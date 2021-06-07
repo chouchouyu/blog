@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta id="referrer" name="referrer" content="never" />
     <!-- <meta id="referrer" name="referrer" content="always" /> -->
-    <title>全栈修炼</title>
+    <title>丑丑鱼的blog</title>
   </head>
   <body>
     <div id="app"></div>
